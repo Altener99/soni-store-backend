@@ -132,7 +132,7 @@ app.put('/addtocart', auth, async (req, res) => {
         }
         else
         {
-            user.cart.push({productId, title, price,image,quantity});
+            user.cart.push({productId, title, price,image,itemquantity});
             res.status(200).json({ message: 'Item added to cart', cart: user.cart });
             await user.save();
         }
