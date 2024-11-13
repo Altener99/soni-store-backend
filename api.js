@@ -132,7 +132,8 @@ app.put('/addtocart', auth, async (req, res) => {
         }
         else
         {
-            user.cart.push({productId, title, price,image,itemquantity});
+            const quantity = itemquantity;
+            user.cart.push({productId, title, price,image,quantity});
             res.status(200).json({ message: 'Item added to cart', cart: user.cart });
             await user.save();
         }
